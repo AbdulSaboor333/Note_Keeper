@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoteKeeper</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>NoteKeeper</h1>
+    <button id="addNoteBtn">+ Add Note</button>
+    
+  </header>
+  
+  <main>
+    <div class="search-bar">
+        <div class="search-wrapper">
+          <i class="fas fa-search"></i> <!-- Search icon -->
+          <input type="text" id="searchInput" placeholder="Search notes by title...">
+        </div>
+      </div>
+    
+      <div id="notesContainer" class="notes-container">
+        <div class="note-card">
+          <h3>Note Title</h3>
+          <p>Note content goes here...</p>
+          <div class="note-actions">
+            <button onclick="editNote()">Edit</button>
+            <button onclick="deleteNote()">Delete</button>
+          </div>
+        </div>
+      </div>
+  </main>
+  
+  <!-- Add/Edit Modal -->
+  <div id="noteModal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modalTitle">Add Note</h2>
+      <form id="noteForm">
+        <input type="text" id="noteTitle" placeholder="Title" required>
+        <textarea id="noteContent" placeholder="Write your note here..." required></textarea>
+        <div class="form-actions">
+          <button type="submit" id="saveNoteBtn">Save</button>
+          <button type="button" id="closeModalBtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
